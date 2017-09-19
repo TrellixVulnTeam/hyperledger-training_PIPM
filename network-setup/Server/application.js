@@ -2,6 +2,7 @@
 var Client = require('fabric-client');
 var COP = require('fabric-ca-client')
 var User = require('fabric-client/lib/User.js');
+
 //requires tor read file such as channel.tx for signing
 var fs = require('fs');
 var path = require('path');
@@ -38,11 +39,6 @@ var orderer = client.newOrderer(
 			'ssl-target-name-override': 'orderer.example.com'
 		}
 );
-
-var username="shubham2";
-var userOrg = 'org1'
-
-
 
 //***********Admin Functions*********
 //below lists some functions that can be called only by organizations admin
@@ -100,6 +96,7 @@ var userOrg = 'org1'
 //lists all the instantiated chaincodes on the peer(s)
 //getInstantiatedChaincodes(org1peersurl,org1mspid,'org1')
 
+//register a new user
 //register user
 registerUser("shubham5",org1mspid,'org1');
 
@@ -163,6 +160,7 @@ function registerUser(username,org1mspid,orgPath){
 	}).then((secret)=>{
 	
 			console.log("\nSecret: ",secret)
+			//use this secreat key to enroll the user
 	
 	});
 } 
