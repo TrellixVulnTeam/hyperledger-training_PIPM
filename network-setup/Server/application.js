@@ -97,8 +97,7 @@ var orderer = client.newOrderer(
 //getInstantiatedChaincodes(org1peersurl,org1mspid,'org1')
 
 //register a new user
-//register user
-registerUser("shubham5",org1mspid,'org1');
+//registerUser("shubham5",org1mspid,'org1');
 
 function registerUser(username,org1mspid,orgPath){
 	
@@ -154,7 +153,7 @@ function registerUser(username,org1mspid,orgPath){
 			console.log("admin user Obj returned")
 			return cop.register({
 						enrollmentID: username,
-						affiliation: 'org1.department4'
+						affiliation: 'org1.department1'
 					}, adminUserObj);
 					
 	}).then((secret)=>{
